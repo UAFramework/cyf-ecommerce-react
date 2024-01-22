@@ -26,6 +26,10 @@ const products = [
 	{
 		"id" : 7,
 		"product_name" : "Tee Shirt Olympic Games"
+	},
+	{
+		"id": 8,
+		"product_name" : "Jura 12 Year Old Single Malt Whisky, 70 cl"
 	}
 ]
 
