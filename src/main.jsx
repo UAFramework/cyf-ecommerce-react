@@ -1,10 +1,9 @@
-import React from 'react'   // import React component from react module
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx' // import a App component from ./App.jsx module
-import './index.css'        // import styles
+import App from './App.jsx'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root'))
-.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

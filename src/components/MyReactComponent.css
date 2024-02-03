@@ -1,8 +1,17 @@
-#words {
-  font-size: xx-large;
-  color: aquamarine;
-}
+#MyReactComponent {
+    font-size: xx-large;
+    color: rgb(228, 38, 136);
+  }
 
-#products {
-  text-align: left;
-}
+  .ProductsTable{
+border: solid 2px rgb(128, 128, 128);
+  }
+
+  
+  .ProductsTable td{
+    border: solid 1px rgb(128, 128, 128);
+  }
+
+  .ProductTable tr:nth-child(even){
+    background: aqua;
+  }
