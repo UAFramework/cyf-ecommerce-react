@@ -1,24 +1,22 @@
-import './MyReactComponent.css'
-import products from '../data/Products.jsx'
+// MyReactComponent.jsx
+import React from 'react';
+import './MyReactComponent.css';
+import products from '../data/Products.jsx';
+import Product from './Product.jsx';
+import ProductAvailability from './ProductAvailability.jsx';
 
 export default function MyReactComponent() {
-
-  const words = ["one", "Two", "Three", "Four", "Five"];
-
   return (
     <>
-      <div id="words">{words.join(", ")}</div>
       <div id="products">
         <h2>Products:</h2>
-        <ul>
-          {
-            products.map(product =>
-              <li key={product.id}>{product.product_name}</li>
-            )
-          }
-        </ul>
+        {products.map(product => (
+          <div key={product.id}>
+            <Product productName={product.product_name} />
+            <ProductAvailability productId={product.id}/>
+          </div>
+        ))}
       </div>
     </>
-  )
-
+  );
 }
