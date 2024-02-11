@@ -1,7 +1,21 @@
-import React from 'react';
-import productsAvailability from '../data/ProductsAvailability.jsx';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 const ProductAvailability = ({ productId }) => {
+  const [productsAvailability, setProductsAvailability] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get('http://localhost:3000/products-availability');
+        setProductsAvailability(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    fetchData();
+  }, []);
+
   const availabilityData = productsAvailability.filter(
     (product) => product.product_id === productId
   );

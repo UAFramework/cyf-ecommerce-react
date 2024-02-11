@@ -6,11 +6,16 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-const list = [];
+const products = require('./data/products.json');
+const productsAvailability = require('./data/products-availability.json');
 
 // API Endpoints
-app.get('/list', (req, res) => {
-  res.json(list);
+app.get('/products', (req, res) => {
+  res.json(products);
+});
+
+app.get('/products-availability', (req, res) => {
+  res.json(productsAvailability);
 });
 
 app.listen(port, () => {

@@ -7,4 +7,5 @@ Front
 http://localhost:3001/
 
 Server
-http://localhost:3000/list
+http://localhost:3000/products
+http://localhost:3000/products-availability
