@@ -1,7 +1,6 @@
-cd client; npm install --save-dev serve;
-cd ../;
-cd server; npm install;
-cd ../;
+cd client; npm install --save-dev serve; cd ../;
+cd server; npm install; cd ../;
+yarn install;
 yarn dev;
 
 Front
