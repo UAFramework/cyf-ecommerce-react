@@ -7,11 +7,14 @@
 border: solid 2px rgb(128, 128, 128);
   }
 
+  th {
+    border: solid 2px rgb(250, 127, 127);
+      }
   
   .ProductsTable td{
-    border: solid 1px rgb(128, 128, 128);
+    border: solid 2px rgb(121, 60, 242);
   }
 
-  .ProductTable tr:nth-child(even){
+  .ProductsTable tr:nth-child(even){
     background: aqua;
   }

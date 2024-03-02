@@ -20,17 +20,12 @@ export default function MyReactComponent({ products, products_availability }) {
               <td>{product.product_name}</td>
               <td>
                 {
-                  /* {products_availability.unit_price} */
-                  // products_availability[0].unit_price
-
-                  products_availability.filter(product_availability => product_availability.product_id === product.id)
+                    products_availability.filter(product_availability => product_availability.product_id === product.id)
                     .map(product_availability => {
 
                       return (
                         <p key={product_availability.supplier_id}>${product_availability.unit_price} at {product_availability.supplier_name}</p>
-                      )
-                      // product_availability.unit_price, product_availability.supplier_name
-                      // unit_price, supplier_name
+                      )                      
                     })
                 }
 
