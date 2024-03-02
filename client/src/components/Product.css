@@ -1,0 +1,5 @@
+.ProductDetail{
+    list-style: none;
+    display: flex;
+    width: 10rem;
+}
