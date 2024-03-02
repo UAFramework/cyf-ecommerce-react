@@ -1,5 +1,9 @@
-.ProductDetail{
+.productDetail{
     list-style: none;
     display: flex;
-    width: 10rem;
+    width: 100%;
+}
+
+.productName {
+    width: 30%;
 }
