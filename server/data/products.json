@@ -1,4 +1,4 @@
-const products = [
+[
 	{
 		"id" : 1,
 		"product_name" : "Mobile Phone X"
@@ -32,5 +32,3 @@ const products = [
 		"product_name" : "Jura 12 Year Old Single Malt Whisky, 70 cl"
 	}
 ]
-
-export default products

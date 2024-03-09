@@ -1,4 +1,4 @@
-const products_availability = [
+[
 	{
 		"product_id" : 6,
 		"product_name" : "Ball",
@@ -147,5 +147,3 @@ const products_availability = [
 		"supplier_name" : "Taobao"
 	}
 ]
-
-export default products_availability
