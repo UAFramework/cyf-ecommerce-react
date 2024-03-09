@@ -1,0 +1,17 @@
+.productAvailability {
+    width: 100%;
+    border: solid 1.5px;
+    border-color: rgb(6, 6, 6);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 2px;
+    justify-content: center;
+    
+}
+
+.productAvailabilityList{
+    justify-content: center;
+    display: flex;
+    color: crimson;
+    padding: 10px;
+}

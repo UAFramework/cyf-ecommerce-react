@@ -5,13 +5,13 @@ import ProductAvailability from './ProductAvailability'
 export default function Product( {productDetails} ) {
     
   const productAvailabilityDetails = productsAvailability.filter(availability => (
-      availability.product_id === productDetails.product_id
+      availability.product_id === productDetails.id
   ))
 
   return (
-      <div className="ProductDetail">
-          <div >{productDetails.product_name}</div>
-          <ProductAvailability availabilityDetails={productAvailabilityDetails} />
+      <div className="productDetail">
+        <p className='productName'>{productDetails.product_name}</p>
+        <ProductAvailability availabilityDetails={productAvailabilityDetails} />
       </div>
     )
 }

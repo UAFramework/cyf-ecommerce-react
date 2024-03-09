@@ -1,6 +1,25 @@
-import { useEffect, useState } from "react"
+import "./ProductAvailability.css"
+// import { useEffect, useState } from "react"
 
 export default function ProductAvailability( {availabilityDetails} ) {
+ 
+return (
+    <div className="productAvailability">
+    <p className="productAvailabilityList">Where to by:</p>
+    <p >Available from just </p>
+
+     <button className="productAvailabilityButton">see all buying options</button> 
+  
+
+    {
+      availabilityDetails?.map(availability => (
+          <p key={availability.supplier_id}>{`${availability.unit_price} at ${availability.supplier_name}`}</p>
+        ))
+    }
+      
+    </div>
+)
+}
 
     /**
      * availabilityDetails should be:
@@ -18,34 +37,22 @@ export default function ProductAvailability( {availabilityDetails} ) {
      * ]
      */
 
-    const  [details, setDetails] = useState([])
+    // const  [details, setDetails] = useState([])
 
-    useEffect(() => {
-      setDetails(availabilityDetails)
-    }, [availabilityDetails])
+    // useEffect(() => {
+    //   setDetails(availabilityDetails)
+    // }, [availabilityDetails])
 
-    return (
-        <div className="productAvailability">
-          <p>Where to by:</p>
-          {
-            details?.map(availability => (
-              <p key={availability.supplier_id}>`${availability.unit_price} at ${availability.supplier_name}`</p>
-            ))
-          }
-        </div>
-      )
-  }
+    // return (
+    //     <div className="productAvailability">
+    //       <p>Where to by:</p>
+    //       {
+    //         details?.map(availability => (
+    //           <p key={availability.supplier_id}>`${availability.unit_price} at ${availability.supplier_name}`</p>
+    //         ))
+    //       }
+    //     </div>
+    //   )
+  // }
 
 
-/**
- * arr = [{char: "A"}, {char: "B"}, {char: "C"}] 
- * // i want to get this from the array bove:
- * // ["A", "B", "C"]
- * 
- * arr.map(el => el.char)
- * // returns
- * // ["A", "B", "C"]
- * 
- * 
- */
-  

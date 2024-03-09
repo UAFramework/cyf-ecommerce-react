@@ -1,12 +1,12 @@
 {
   "name": "server-package",
   "version": "1.0.0",
-  "description": "server",
+  "description": "TODO: fill this in",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "set NODE_ENV=local && nodemon server.js",
+    "dev": "set NODE_ENV=dev && nodemon server.js",
     "test": "echo 'Error: no test specified' && exit 1"
   },
   "keywords": [],
