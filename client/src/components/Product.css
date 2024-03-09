@@ -1,5 +1,23 @@
-.ProductDetail{
-    list-style: none;
+
+.productDetail{
     display: flex;
-    width: 10rem;
+    flex-direction: row;
+    list-style: none;
+    width: 50rem;
+    padding: 10px;
+    
+}
+
+.productName {
+    display: flex;
+    border: solid 1.5px;
+    border-color: rgb(6, 6, 6);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 2px;
+    justify-content: center;
+    width: 50%;
+    color:brown;
+    padding: 20px;
+    margin: 2px;
 }
