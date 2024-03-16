@@ -86,16 +86,42 @@ app.get("/availability", async (req, res) => {
 //     ]
 //   }
 
-app.get("/availability/product-id/:productId", (req, res) => {
-    
-  db.query("select version()")
-  .then((result) => {
-    res.status(200).send(result.rows[0]);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-});
+app.get("/availability/product-id/:productId", async(req, res) => {
+  let productId = req.params['productId'];
+  const availabilityByProductId = `select
+	pa.prod_id as productId,
+	pa.supp_id as supplier_id,
+	s.supplier_name,
+	pa.unit_price
+from
+	product_availability pa
+inner join suppliers s 
+      on
+	pa.supp_id = s.id
+  WHERE pa.prod_id = $1
+ORDER BY
+	productId;`
+
+//   const text = 'INSERT INTO users(name, email) VALUES($1, $2) RETURNING *'
+// const values = ['brianc', 'brian.m.carlson@gmail.com']
+ 
+// const res = await client.query(text, values)
+// console.log(res.rows[0])
+    try {
+        const result = await db.query(availabilityByProductId, [productId]);
+        if (result.rows > 0) {
+          res.status(200).json(result.rows);
+        }
+        else {
+          res.status(404).json({error: `couln't find availability for productId ${productId}`});
+        }
+
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({error});
+      }
+    });
+
 
 app.listen(process.env.PORT || 4000, function () {
   console.log(`Server is listening on port ${process.env.PORT || 4000}. Ready to accept requests!`);
