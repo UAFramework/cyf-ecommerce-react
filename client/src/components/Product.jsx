@@ -1,40 +1,18 @@
-import { useEffect, useState } from "react";
 import './Product.css'
-// import productsAvailability from  '../data/ProductsAvailability'
-import ProductAvailability from './ProductAvailability'
 
-export default function Product( {productDetails} ) {
-
-  const [products, setProducts] = useState([]);
-  // const [minPrice, setMinPrice] = useState(" ");
-  // const [supplier, setSupplier] = useState(" ");
-  
-
-  useEffect(() => {
-    const dataFetch = async () => {
-      const data = await (
-        await fetch(
-          `http://localhost:4000/availability`
-        )
-      ).json();
-
-      setProducts(data);
-    };
-
-    dataFetch();
-  }, []);
-
-      
-  const productAvailabilityDetails = data.filter(availability => (
-    availability.product_id === product.id
-  ))
-
-
+export default function Product({ productName, minUnitPrice, suppCount }) {
   return (
-    <div className="productDetail">
-    <p className='productName'>{productDetails.product_name}</p>
-    <ProductAvailability availabilityDetails={productAvailabilityDetails} />
-  </div>
-    )
+    <div className='product'>
+      <p>{productName}</p>
+      {
+        // Ternary Operator
+        // const x = (condition) ? "value if true" : "value if false";
+        suppCount > 0 ? (
+          <p className='available-from'>Available from just £{minUnitPrice}</p>
+        ) : (
+          <p className='available-from'>not available</p>
+        )
+      }
+    </div>
+  )
 }
-

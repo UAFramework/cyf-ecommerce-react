@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "cross-env NODE_ENV=local nodemon server.js",
-    "test": "echo 'Error: no test specified' && exit 1"
+    "test": "echo 'Error: no test specified' && exit 1",
+    "lint": "eslint . --ext .js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,11 @@
     "cross-env": "7.0.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
+    "@babel/eslint-plugin": "^7.23.5"
   }
 }

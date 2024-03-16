@@ -1,0 +1,31 @@
+{
+  "semi": false,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "options": {
+        "semi": true
+      }
+    },
+    {
+      "files": ["*.html"],
+      "options": {
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": "*.{js,jsx}",
+      "options": {
+        "parser": "flow"
+      }
+    }
+  ]
+}

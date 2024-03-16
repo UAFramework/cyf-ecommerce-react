@@ -1,32 +1,25 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-li{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 30rem;
-  }
-
-h2{
-  color: chocolate;
-  background-color: bisque;
-  }
-
-ul{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
   list-style: none;
- }
+  min-width: 50%;
+}
 
-/* .productName{
-  border: solid;
-  color:brown;
-} */
+li {
+  width: 100%;
+  margin: 1rem 0;
+}
 
-
+.productContainer {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  align-items: stretch;
+}
