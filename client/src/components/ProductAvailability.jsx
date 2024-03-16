@@ -1,8 +1,37 @@
+import { useEffect, useState } from "react";
 import "./ProductAvailability.css"
-// import { useEffect, useState } from "react"
 
-export default function ProductAvailability( {availabilityDetails} ) {
+
+export default function ProductAvailability(  ) {
+  const [availabilityDetails, setAvailabilityDetails] = useState()
  
+
+  const fetchAvailabilityData = async (availabilityDetails) => {
+    try {
+      const response = await fetch(`http://localhost:4000/availability/product-id/${productid}`)
+      if (response.ok) {
+        const data = await response.json()
+        setAvailabilityDetails(data[0])
+      } else {
+        throw new Error(`Got a bad response from the server: ${response.statusText}`)
+      }
+    } catch (error) {
+      alert("An error occurred while fetching data.\n" + 
+            "See console log for more details.")
+
+      console.error(error)
+    } 
+  }
+
+  useEffect(() => {
+    if (availabilityDetails === undefined || availabilityDetails === "") {
+      setAvailabilityDetails(undefined)
+    } else {
+      fetchAvailabilityData (availabilityDetails)
+    }
+  }, [availabilityDetails])
+
+
 return (
     <div className="productAvailability">
     <p className="productAvailabilityList">Where to by:</p>
