@@ -1,17 +1,20 @@
 .productAvailability {
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 35%;
     border: solid 1.5px;
-    border-color: rgb(6, 6, 6);
-    border-radius: 12px;
-    padding: 10px;
-    margin: 2px;
+    border-color: rgb(97, 18, 89);
+    border-radius: 10px;
+    padding: 5px;
     justify-content: center;
+    margin: 2px;
     
 }
 
-.productAvailabilityList{
-    justify-content: center;
+.productAvailList{
     display: flex;
-    color: crimson;
-    padding: 10px;
-}
+    flex-direction: column;
+    gap: 10px;
+   list-style: none;
+   }
+

@@ -1,4 +1,4 @@
-import cors from "cors"
+import cors from "cors";
 import db from "./db/db.js";
 import express from "express";
 
@@ -53,7 +53,7 @@ app.get("/suppliers", async (req, res) => {
 //     ]
 //   }
 
-app.get("/availability", async (req, res) => {
+app.get('/availability', async (req, res) => {
   const queryString = `select 
       p.id as product_id,	
       p.product_name,
@@ -71,22 +71,11 @@ app.get("/availability", async (req, res) => {
     res.status(200).json(result.rows);
   } catch (error) {
     console.error(error);
-    res.status(500).json({error});
+    res.status(500).json({ error });
   }
 });
 
-//   {
-//     "productId": numeric,
-//     "availability": object [
-//       {
-//         "supplier_id": numeric,
-//         "supplier_name": string,
-//         "unit_price": numeric
-//       }
-//     ]
-//   }
-
-app.get("/availability/product-id/:productId", async(req, res) => {
+app.get('/availability/product-id/:productId', async(req, res) => {
   let productId = req.params['productId'];
   const availabilityByProductId = `select
 	pa.prod_id as productId,
@@ -99,30 +88,30 @@ inner join suppliers s
       on
 	pa.supp_id = s.id
   WHERE pa.prod_id = $1
-ORDER BY
-	productId;`
+ORDER BY 
+      productId`;
 
 //   const text = 'INSERT INTO users(name, email) VALUES($1, $2) RETURNING *'
 // const values = ['brianc', 'brian.m.carlson@gmail.com']
  
 // const res = await client.query(text, values)
 // console.log(res.rows[0])
-    try {
-        const result = await db.query(availabilityByProductId, [productId]);
-        if (result.rows > 0) {
-          res.status(200).json(result.rows);
-        }
-        else {
-          res.status(404).json({error: `couln't find availability for productId ${productId}`});
-        }
+try {
+  const result = await db.query(availabilityByProductId, [productId])
+  if (result.rows) {
+    res.status(200).json(result.rows)
+  } else {
+    res.status(404).json({
+      error: `couldn't find availability for productId ${productId}`,
+    })
+  }
+} catch (error) {
+  console.error(error)
+  res.status(500).json({error})
+}
+});
 
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({error});
-      }
-    });
 
-
-app.listen(process.env.PORT || 4000, function () {
-  console.log(`Server is listening on port ${process.env.PORT || 4000}. Ready to accept requests!`);
+    app.listen(process.env.PORT || 4000, function () {
+      console.log(`Server is listening on port ${process.env.PORT || 4000}. Ready to accept requests!`);
 });
