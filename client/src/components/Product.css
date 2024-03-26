@@ -1,0 +1,21 @@
+
+.productDetail{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+   
+    padding: 10px;
+    
+}
+
+/* .productName {
+    display: flex;
+    border: solid 1.5px;
+    border-color: rgb(6, 6, 6);
+    border-radius: 12px;
+    padding: 5px;
+    margin: 2px;
+    justify-content: center;
+    width: 70%;
+      
+} */

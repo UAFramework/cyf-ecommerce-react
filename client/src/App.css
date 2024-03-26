@@ -1,0 +1,42 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  }
+
+li{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  width: 45rem;
+  justify-content: space-between;
+
+  }
+
+h2{
+  color: rgb(97, 18, 89);
+  background-color: rgb(235, 138, 197);
+  }
+
+ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+    
+ }
+
+.productName{
+   color:rgb(165, 42, 147);
+    display: block;
+    border: solid 1.5px;
+    border-color: rgb(243, 139, 215);
+    border-radius: 12px;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    width: 240px;
+}
+
+
